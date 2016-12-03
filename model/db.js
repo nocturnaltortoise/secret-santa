@@ -4,9 +4,9 @@ var User = require('./User.js');
 
 mongoose.connect('mongodb://localhost/secret-santa');
 var db = mongoose.connection;
-db.once('open', function(){
-    console.log("test");
-});
+// db.once('open', function(){
+//     console.log("test");
+// });
 
 var testUser = User.create({
     email: 'test@test.com',

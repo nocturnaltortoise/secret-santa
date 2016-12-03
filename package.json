@@ -15,6 +15,7 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "mongoose": "^4.7.1",
     "mongoose-bcrypt": "^1.4.2"
   }
 }
