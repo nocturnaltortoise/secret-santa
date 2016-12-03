@@ -7,8 +7,6 @@ var groupSchema = mongoose.Schema({
     members: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 });
 
-Group.plugin(findOrCreate);
-
 var groupModel = mongoose.model('Group', groupSchema);
 
 module.exports = groupModel;
