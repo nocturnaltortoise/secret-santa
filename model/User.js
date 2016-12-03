@@ -11,7 +11,9 @@ var userSchema = mongoose.Schema({
     hates: [String],
     address: String,
     dietRequirements: [String],
-    groups: [{ type: Schema.Types.ObjectId, ref: 'Group' }]
+    groups: [{ type: Schema.Types.ObjectId, ref: 'Group' }],
+    assignedPartners: [{ String: String }]
+
 });
 
 userSchema.plugin(bcrypt);

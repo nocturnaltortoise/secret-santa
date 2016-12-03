@@ -66,6 +66,27 @@ module.exports = (router) => {
 
     });
 
+    router.get('/group/:id/shuffle', (req, res, next) => {
+        var group = Group.findById(req.params.id, (err, group) => {
+            if(err){
+                console.error(err);
+            }else{
+                User.find().where('_id').in(group.members)
+                    .exec((err,members) => {
+                        for(var i = 0; i < members.length; i++){
+                            var member = members[i];
+                            var randomPartner = members[Math.floor(Math.random() * members.length)]
+                            var groupId = group._id;
+                            member.assignedPartners.push({groupId: randomPartner._id})
+                            member.save();
+                            // don't think this works currently
+                        }
+                        res.render('group', { name: group.name, members: members, id: group._id })
+                    });
+            }
+        });
+    });
+
     //Another route for the /group/search containing params here later...
     // router.get('/group/search/:user_query', (req, res, next) => {
       // res.send('The query you typed in was: '+req.body.user_query);
