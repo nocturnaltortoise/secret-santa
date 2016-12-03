@@ -1,0 +1,39 @@
+
+extends layout
+
+block content
+
+    h1 User input forms
+
+    form(action="/user/new" method="post")
+
+        div(id="dynin")
+            label(for="likes") What things do you like?
+            input(type="text" name="likes" value="Required" required)
+        input(id="textButton" type="button" value="Add another text input")
+
+        div(id="dynin2")
+            label(for="allergies") Allergies or dietary requirements.
+            input(type="text" name="allergies")
+        input(id="textButton2" type="button" value="Add another text input")
+
+        div(id="dynin3")
+            label(for="hates") What things do you hate?
+            input(type="text" name="hates")
+        input(id="textButton3" type="button" value="Add another text input")
+
+        h2(Address)
+        label(for="address1") House number
+        input(type="text" name="address1")
+        label(for="address2") Street name
+        input(type="text" name="address2")
+        label(for="address3") Town/city 
+        input(type="text" name="address3")
+        label(for="address4") Postcode
+        input(type="text" name="address4")
+        label(for="address5") Country 
+        input(type="text" name="address5")
+
+        input(type="submit")
+
+    script(src="/js/addin.js" type='text/javascript')

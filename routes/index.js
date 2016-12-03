@@ -7,11 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/user/create', (req, res, next) => {
-  res.render('user-input');
+  res.render('user-new');
 });
 
 router.post('/user/new', (req, res, next) => {
-  console.log(res);
+
 });
 
 module.exports = router;
