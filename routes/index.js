@@ -62,11 +62,27 @@ router.get('/group/:id', (req, res, next) => {
 });
 
 router.get('/group/search', (req, res, next) => {
-  res.render('group-search');
+  if (typeof(req.query.user_query) == 'undefined') {
+    res.render('group-search');
+  }
+  else {
+    Group.find({name: '/.*'+ req.query.user_query +'.*/'}, (err, groups) => {
+      if (err) {
+        console.error(err);
+        res.send("Something has gone wrong. Try again later.");
+      }
+      else {
+        console.log(groups);
+        res.send('The query you typed in was: '+req.query.user_query);
+      }
+    });
+  }
 });
 
 //Another route for the /group/search containing params here later...
-
+// router.get('/group/search/:user_query', (req, res, next) => {
+  // res.send('The query you typed in was: '+req.body.user_query);
+// });
 
 router.get('/user/new', (req, res, next) => {
   res.render('user-new');

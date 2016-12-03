@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var findOrCreate = require('mongoose-findorcreate');
 
 var groupSchema = mongoose.Schema({
     name: String,

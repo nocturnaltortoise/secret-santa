@@ -16,17 +16,17 @@ var db = mongoose.connection;
 
 
 
-var testGroup = Group.findOrCreate({ name: 'Test Group' },
-    function(err, group, created) {
-        User.create({
-            email: 'test@test.com',
-            password: 'test',
-            groups: [group._id]
-        }, function(err, user){
-            var userQuery = User.findOne({ email: 'test@test.com' }, function(err, user){ console.log(user.groups); });
-        });
-    }
-);
-// console.log(testGroup._id)
+// var testGroup = Group.findOrCreate({ name: 'Test Group' },
+//     function(err, group, created) {
+//         User.create({
+//             email: 'test@test.com',
+//             password: 'test',
+//             groups: [group._id]
+//         }, function(err, user){
+//             var userQuery = User.findOne({ email: 'test@test.com' }, function(err, user){ console.log(user.groups); });
+//         });
+//     }
+// );
+// // console.log(testGroup._id)
 
 // console.log(testUser.groups);

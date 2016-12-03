@@ -1,0 +1,10 @@
+
+extends layout
+
+block content
+
+    h1 Group Search
+
+    form(action="/group/search" method="get")
+        input(id="user_query" name="user_query" placeholder="Search")
+        input(type="submit")
