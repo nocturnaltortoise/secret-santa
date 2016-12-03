@@ -2,38 +2,49 @@
 extends layout
 
 block content
+    link(rel='stylesheet', href='/stylesheets/users.css')
+    
+    div(class="wrapper")
+        h1 Make an account
 
-    h1 User input forms
-
-    form(action="/user/create" method="post")
-
-        div(id="dynin")
+        form(class="userCreateForm" action="/user/create" method="post")
+            
+            label(for="email") Email
+            input(type="text" name="email")
+            
+            label(for="password") Password
+            input(type="password", name="password")
+            
             label(for="likes") What things do you like?
-            input(type="text" name="likes")
-        input(id="textButton" type="button" value="Add another text input")
+            div(class="buttonWithInputs")
+                div(id="dynin" class="listInputs")
+                    input(type="text" name="likes")
+                input(id="textButton" class="addTextButton" type="button" value="+")
 
-        div(id="dynin2")
-            label(for="allergies") Allergies or dietary requirements.
-            input(type="text" name="allergies")
-        input(id="textButton2" type="button" value="Add another text input")
-
-        div(id="dynin3")
+            label(for="allergies") Do you have any allergies or dietary requirements?
+            div(class="buttonWithInputs")
+                div(id="dynin2" class="listInputs")
+                    input(type="text" name="allergies")
+                input(id="textButton2" class="addTextButton" type="button" value="+")
+                
             label(for="hates") What things do you hate?
-            input(type="text" name="hates")
-        input(id="textButton3" type="button" value="Add another text input")
+            div(class="buttonWithInputs")
+                div(id="dynin3" class="listInputs")
+                    input(type="text" name="hates")
+                input(id="textButton3" type="button" class="addTextButton" value="+")
 
-        h2(Address)
-        label(for="address1") House number
-        input(type="text" name="address1")
-        label(for="address2") Street name
-        input(type="text" name="address2")
-        label(for="address3") Town/city 
-        input(type="text" name="address3")
-        label(for="address4") Postcode
-        input(type="text" name="address4")
-        label(for="address5") Country 
-        input(type="text" name="address5")
+            h2(Address)
+            label(for="address1") House number
+            input(type="text" name="address1")
+            label(for="address2") Street name
+            input(type="text" name="address2")
+            label(for="address3") Town/city 
+            input(type="text" name="address3")
+            label(for="address4") Postcode
+            input(type="text" name="address4")
+            label(for="address5") Country 
+            input(type="text" name="address5")
 
-        input(type="submit")
+            input(type="submit")
 
     script(src="/js/addin.js" type='text/javascript')

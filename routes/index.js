@@ -42,8 +42,8 @@ router.post('/user/create', (req, res, next) => {
   }
   console.log("The overall address: "+address.join(", "));
   var user = new User({
-    email: 'test@test.com',
-    password: 'test',
+    email: params.email,
+    password: params.password,
     likes: [params.likes],
     hates: [params.hates],
     address: address.join(", "),
@@ -53,7 +53,7 @@ router.post('/user/create', (req, res, next) => {
   user.save((err, user, numAffected) => {
     if (err) {
       console.error(err);
-      res.send("Something has gone wrong. Please try again later!");
+      res.redirect('/user/new');
     }
     else {
       console.log(numAffected+" user has been saved!");

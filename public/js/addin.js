@@ -11,9 +11,8 @@ textButton.addEventListener('click', function(){
 		}
 		else {
 			var newstuff=document.createElement('div');
-			newstuff.innerHTML="<p><input type=\"text\" name=\"likes[]\"></p>";
+			newstuff.innerHTML="<input class=\"extraInput\" type=\"text\" name=\"likes[]\">";
 			document.getElementById(divstuff.id).appendChild(newstuff);
-			console.log(divstuff.id);
 			counter++;
 		}
 	}
@@ -60,5 +59,5 @@ textButton3.addEventListener('click', function(){
 );
 
 document.onload=function(){
-	
+
 }
