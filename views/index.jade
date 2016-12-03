@@ -1,5 +1,8 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class="container")
+    button(id="sign_in" class="btn") Sign In
+    button(id="sign_up" class="btn") Sign Up
+
+  script(src="js/home.js")
