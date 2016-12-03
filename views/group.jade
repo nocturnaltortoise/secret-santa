@@ -5,6 +5,8 @@ block content
         h1 #{name}
         div(class="memberList")
             for member in members
-                li #{member.firstName} // this doesn't work
+                li #{member.firstName} #{member.lastName} #{member.email}
             else
                 li There are no members yet!
+        
+        a(href="/group/#{id}/shuffle") Shuffle!
