@@ -14,4 +14,4 @@ userSchema.plugin(bcrypt);
 
 var userModel = mongoose.model('User', userSchema);
 
-var exports = module.exports = userModel;
+module.exports = userModel;
