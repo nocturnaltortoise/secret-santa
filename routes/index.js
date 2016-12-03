@@ -58,12 +58,11 @@ router.get('/group/:id', (req, res, next) => {
 });
 
 router.get('/group/search', (req, res, next) => {
-  res.send("Page to see all groups here");
+  res.render('group-search');
 });
 
-router.get('/group/search', (req, res, next) => {
-  res.send("Page to see all groups here");
-});
+//Another route for the /group/search containing params here later...
+
 
 router.get('/user/new', (req, res, next) => {
   res.render('user-new');
