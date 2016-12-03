@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "mongoose": "^4.7.1",
-    "mongoose-bcrypt": "^1.4.2"
+    "mongoose-bcrypt": "^1.4.2",
+    "mongoose-findorcreate": "^0.1.2"
   }
 }
