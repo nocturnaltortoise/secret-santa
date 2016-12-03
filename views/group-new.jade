@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 Create a group
+    form(action="/group/create" method="post")
+        input(type="hidden" name="userId" value="#{userId}")
+        label(for="name")
+        input(type="text" name="name")
+        
+        input(type="submit" value="Create Your Group")

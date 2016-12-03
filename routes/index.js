@@ -21,6 +21,42 @@ router.post('/login', (req, res, next) => {
   res.send("Verifying user details...");
 });
 
+router.get('/group/new', (req, res, next) => {
+    res.render('group-new');
+});
+
+router.post('/group/create', (req, res, next) => {
+    var params = req.body;
+    var user = User.findById(params.userId, (err, user) => {
+        var group = new Group({
+            name: params.name,
+            members: [user]
+        });
+
+        group.save((err, group) => {
+            if(err){
+                res.redirect('error');
+                console.error(err);
+            }else{
+                res.redirect('/group/' + group._id);
+            }
+        });
+    });
+});
+
+router.get('/group/:id', (req, res, next) => {
+    var groupId = req.params.id;
+    var group = Group.findById(groupId, (err, group) => {
+        if(err){
+            res.redirect('error');
+        }else{
+            res.render('group', { name: group.name, members: group.members });
+        }
+
+    });
+
+});
+
 router.get('/group/search', (req, res, next) => {
   if (typeof(req.query.user_query) == 'undefined') {
     res.render('group-search');
@@ -74,7 +110,7 @@ router.post('/user/create', (req, res, next) => {
     }
     else {
       console.log(numAffected+" user has been saved!");
-      res.send("Received!");
+      res.render('group-new', {userId: user._id});
     }
   });
 });
