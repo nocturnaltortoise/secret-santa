@@ -53,6 +53,10 @@ router.get('/group/:id', (req, res, next) => {
             res.render('group', { name: group.name, members: group.members });
         }
 
+        for(var i=0; i<group.members.length; i++){
+            console.log(group.members[i].firstName); //for some reason the group members don't seem to show first names
+        }
+
     });
 
 });
@@ -81,6 +85,8 @@ router.post('/user/create', (req, res, next) => {
   var user = new User({
     email: params.email,
     password: params.password,
+    firstName: params.firstName,
+    lastName: params.lastName,
     likes: [params.likes],
     hates: [params.hates],
     address: address.join(", "),
