@@ -12,11 +12,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/user/create', (req, res, next) => {
-  res.render('user-input');
+router.get('/user/new', (req, res, next) => {
+  res.render('user-new');
 });
 
-router.post('/user/new', (req, res, next) => {
+router.post('/user/create', (req, res, next) => {
   //req.body.<field_name>
   var params = req.body;
   // Create the user from supplied details
