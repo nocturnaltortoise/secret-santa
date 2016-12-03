@@ -20,9 +20,10 @@ router.post('/user/create', (req, res, next) => {
   //req.body.<field_name>
   var params = req.body;
   // Create the user from supplied details
+  // console.log(params);
   var user = new User({
-    email: 'test@test.com',
-    password: 'test',
+    email: params.email,
+    password: params.password,
     likes: [params.likes],
     hates: [params.hates],
     address: params.address1+", "+params["address2"],
@@ -32,6 +33,7 @@ router.post('/user/create', (req, res, next) => {
   user.save((err, user, numAffected) => {
     if (err) {
       console.error(err);
+      res.redirect('/user/new');
     }
     console.log(numAffected+" user has been saved!");
     res.send("Received!");
