@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    div(class="wrapper")
+        h1 #{name}
+        div(class="memberList")
+            for member in members
+                li #{member.firstName} // this doesn't work
+            else
+                li There are no members yet!
