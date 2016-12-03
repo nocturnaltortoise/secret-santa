@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A web app for running a Secret Santa.",
   "scripts": {
-    "start": "node controllers/index.js"
+    "start": "node controllers/main.js"
   },
   "dependencies": {},
   "devDependencies": {
