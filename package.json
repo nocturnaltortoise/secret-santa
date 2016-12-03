@@ -1,0 +1,13 @@
+{
+  "name": "secret-santa",
+  "version": "0.0.1",
+  "description": "A web app for running a Secret Santa.",
+  "scripts": {
+    "start": "node controllers/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mongodb": "^2.2.12",
+    "mongoose": "^4.7.1"
+  }
+}
