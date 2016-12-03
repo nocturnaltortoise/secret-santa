@@ -1,6 +1,14 @@
-body {
-  padding: 50px;
+html, body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 a {
