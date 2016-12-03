@@ -5,6 +5,6 @@ block content
         h1 #{name}
         div(class="memberList")
             for member in members
-                li= member
+                li #{member.firstName} // this doesn't work
             else
                 li There are no members yet!

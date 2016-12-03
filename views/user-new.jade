@@ -10,10 +10,16 @@ block content
         form(class="userCreateForm" action="/user/create" method="post")
             
             label(for="email") Email
-            input(type="text" name="email")
+            input(type="text" name="email" required)
             
             label(for="password") Password
-            input(type="password", name="password")
+            input(type="password", name="password" required)
+            
+            label(for="firstName") First Name
+            input(type="text", name="firstName" required)
+            
+            label(for="lastName") Last Name
+            input(type="text", name="lastName" required)
             
             label(for="likes") What things do you like?
             div(class="buttonWithInputs")

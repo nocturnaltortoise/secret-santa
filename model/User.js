@@ -5,6 +5,8 @@ var Schema = mongoose.Schema;
 var userSchema = mongoose.Schema({
     email: { type: String, required: true, index: { unique: true } },
     password: { type: String, required: true, bcrypt: true },
+    firstName: String,
+    lastName: String,
     likes: [String],
     hates: [String],
     address: String,
