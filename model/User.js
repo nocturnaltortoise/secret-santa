@@ -5,10 +5,10 @@ var Schema = mongoose.Schema;
 var userSchema = mongoose.Schema({
     email: { type: String, required: true, index: { unique: true } },
     password: { type: String, required: true, bcrypt: true },
-    likes: [{ like: String }],
-    hates: [{ hate: String }],
+    likes: [String],
+    hates: [String],
     address: String,
-    dietRequirements: [{ requirement: String }],
+    dietRequirements: [String],
     groups: [{ type: Schema.Types.ObjectId, ref: 'Group' }]
 });
 
