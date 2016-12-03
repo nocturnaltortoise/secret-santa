@@ -5,12 +5,12 @@ block content
 
     h1 Login
 
-    form(action="SEND CONTENTS HERE" method="post")
+    form(action="/user/verify" method="post")
     
-        label(for="username" Username:)
+        label(for="username") Username:
         input(type="text" name="username")
 
-        label(for="password" Password:)
-        input(type="text" name="password")
-
-    script(src="addin.js" type='text/javascript')
+        label(for="password") Password:
+        input(type="password" name="password")
+        
+        input(type="submit")
