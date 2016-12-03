@@ -28,10 +28,6 @@ router.get('/group/search', (req, res, next) => {
   res.send("Page to see all groups here");
 });
 
-router.get('/group/search', (req, res, next) => {
-  res.send("Group created!");
-});
-
 router.get('/user/new', (req, res, next) => {
   res.render('user-new');
 });
